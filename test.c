@@ -33,7 +33,8 @@ static fb_info_t *fb0;
 unsigned int screen_size;
 struct fb_var_screeninfo fbvar;
 struct fb_fix_screeninfo finfo;
-static inline unsigned int argb565(unsigned char a, unsigned char r, unsigned char g, unsigned char b);
+static inline unsigned int rgba565(unsigned char a, unsigned char r, unsigned char g, unsigned char b);
+static inline unsigned int rgba888(unsigned char a, unsigned char r, unsigned char g, unsigned char b);
 int openfb(char *devname)
 {
     int fd;
@@ -45,7 +46,7 @@ int openfb(char *devname)
     {
         fb0 = (fb_info_t *)malloc(sizeof(fb_info_t) + fbvar.bits_per_pixel);
     }
-    color =argb565(0,0,0xff,0);
+    color = rgba888(0,0xff,0,0);
     fb0->fd = fd;
     fb0->width = fbvar.xres;
     fb0->height = fbvar.yres;
@@ -60,14 +61,18 @@ int openfb(char *devname)
     fb0->buf = mmap(0, screen_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
     return fd;
 }
-static inline unsigned int  argb565(unsigned char a, unsigned char r, unsigned char g, unsigned char b)
+static inline unsigned int  rgba565(unsigned char a, unsigned char r, unsigned char g, unsigned char b)
 {
-    return ((r>>3)<<11)|((g>>2)<<5|(b>>3));
+    return ((r << 11) | (g <<5) | b);
+}
+static inline unsigned int rgba888(unsigned char a, unsigned char r, unsigned char g, unsigned char b)
+{
+    return ((r << 16) | (g << 8) | b);
 }
 static void fill_pixel(unsigned int pixel, int x0, int y0, int w, int h)
 {
     int i, j;
-    unsigned short *pbuf = (unsigned short *)fb0->buf;
+    unsigned int *pbuf = (unsigned int *)fb0->buf;
     for (i = y0; i < h; i ++) {
         for (j = x0; j < w; j ++) {
             pbuf[i * 240 + j] = pixel;
@@ -78,7 +83,6 @@ static void fill_pixel(unsigned int pixel, int x0, int y0, int w, int h)
 static void clean_framebuffer(const fb_info_t *fb)
 {
     int x,y;
-    printf("fb->vw:%d\tfb->w\t%d",fb->virtual_width,fb->width);
     for(y = fb->virtual_y;y < fb->virtual_height;y ++)
     {
         for(x = fb->virtual_x;x < fb->stride;x +=(fb->bpp >> 3))
@@ -106,7 +110,7 @@ int main () {
     while(1) {
         for (count = 0; count < 100; count++) {
             r = 0xff;
-            fill_pixel(argb565(0, r, g, b), 0, 0, 100, 100);
+            fill_pixel(rgba888(0, r, g, b), 0, 0, 100, 100);
         }
         break;
     }

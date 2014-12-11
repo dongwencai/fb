@@ -1,0 +1,5 @@
+syn keyword CTagsMember height stride virtual_y width color_key fd virtual_width buf virtual_x virtual_height bpp
+syn keyword CTagsGlobalVariable screen_size fbbuf fb0 finfo fbvar
+syn keyword CTagsFunction fill_pixel main clean_framebuffer argb565 openfb
+syn keyword CTagsType fb_info_t
+

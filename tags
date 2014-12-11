@@ -1,0 +1,40 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+__anon1::bpp	test.c	/^    int bpp;$/;"	m	struct:__anon1	file:	access:public
+__anon1::buf	test.c	/^    void *buf;$/;"	m	struct:__anon1	file:	access:public
+__anon1::color_key	test.c	/^    char color_key[0];$/;"	m	struct:__anon1	file:	access:public
+__anon1::fd	test.c	/^    int fd;$/;"	m	struct:__anon1	file:	access:public
+__anon1::height	test.c	/^    int height;$/;"	m	struct:__anon1	file:	access:public
+__anon1::stride	test.c	/^    int stride;$/;"	m	struct:__anon1	file:	access:public
+__anon1::virtual_height	test.c	/^    int virtual_height;$/;"	m	struct:__anon1	file:	access:public
+__anon1::virtual_width	test.c	/^    int virtual_width;$/;"	m	struct:__anon1	file:	access:public
+__anon1::virtual_x	test.c	/^    int virtual_x;$/;"	m	struct:__anon1	file:	access:public
+__anon1::virtual_y	test.c	/^    int virtual_y;$/;"	m	struct:__anon1	file:	access:public
+__anon1::width	test.c	/^    int width;$/;"	m	struct:__anon1	file:	access:public
+argb565	test.c	/^static inline unsigned int  argb565(unsigned char a, unsigned char r, unsigned char g, unsigned char b)$/;"	f	file:	signature:(unsigned char a, unsigned char r, unsigned char g, unsigned char b)
+argb565	test.c	/^static inline unsigned int argb565(unsigned char a, unsigned char r, unsigned char g, unsigned char b);$/;"	p	file:	signature:(unsigned char a, unsigned char r, unsigned char g, unsigned char b)
+bpp	test.c	/^    int bpp;$/;"	m	struct:__anon1	file:	access:public
+buf	test.c	/^    void *buf;$/;"	m	struct:__anon1	file:	access:public
+clean_framebuffer	test.c	/^static void clean_framebuffer(const fb_info_t *fb)$/;"	f	file:	signature:(const fb_info_t *fb)
+color_key	test.c	/^    char color_key[0];$/;"	m	struct:__anon1	file:	access:public
+fb0	test.c	/^static fb_info_t *fb0;$/;"	v	file:
+fb_info_t	test.c	/^}fb_info_t;$/;"	t	typeref:struct:__anon1	file:
+fbbuf	test.c	/^static void *fbbuf;$/;"	v	file:
+fbvar	test.c	/^struct fb_var_screeninfo fbvar;$/;"	v	typeref:struct:fb_var_screeninfo
+fd	test.c	/^    int fd;$/;"	m	struct:__anon1	file:	access:public
+fill_pixel	test.c	/^static void fill_pixel(unsigned int pixel, int x0, int y0, int w, int h)$/;"	f	file:	signature:(unsigned int pixel, int x0, int y0, int w, int h)
+finfo	test.c	/^struct fb_fix_screeninfo finfo;$/;"	v	typeref:struct:fb_fix_screeninfo
+height	test.c	/^    int height;$/;"	m	struct:__anon1	file:	access:public
+main	test.c	/^int main () {$/;"	f
+openfb	test.c	/^int openfb(char *devname)$/;"	f	signature:(char *devname)
+screen_size	test.c	/^unsigned int screen_size;$/;"	v
+stride	test.c	/^    int stride;$/;"	m	struct:__anon1	file:	access:public
+virtual_height	test.c	/^    int virtual_height;$/;"	m	struct:__anon1	file:	access:public
+virtual_width	test.c	/^    int virtual_width;$/;"	m	struct:__anon1	file:	access:public
+virtual_x	test.c	/^    int virtual_x;$/;"	m	struct:__anon1	file:	access:public
+virtual_y	test.c	/^    int virtual_y;$/;"	m	struct:__anon1	file:	access:public
+width	test.c	/^    int width;$/;"	m	struct:__anon1	file:	access:public
